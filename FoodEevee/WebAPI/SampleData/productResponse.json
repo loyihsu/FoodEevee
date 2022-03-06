@@ -1,0 +1,33 @@
+{
+  "items": [
+    {
+      "name": "Goodie Coffee",
+      "type": "coffee",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/220px-A_small_cup_of_coffee.JPG",
+      "price": 100
+    },
+    {
+      "name": "Delicious Sandwich",
+      "type": "sandwich",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Egg_Sandwich.jpg/220px-Egg_Sandwich.jpg",
+      "price": 50
+    },
+    {
+      "name": "Fat Fat Waffle",
+      "type": "Waffle",
+      "image": "https://static01.nyt.com/images/2022/01/18/dining/mc-Easy-Weekend-Waffles/merlin_200484558_c16c33dd-eda4-43a0-a063-29570a6de5f5-articleLarge.jpg",
+      "price": 150
+    },
+    {
+      "name": "Luxury Breakfast",
+      "type": "Breakfast",
+      "image": "https://storcpdkenticomedia.blob.core.windows.net/media/lolretail/media/lol-retired/blog_images/2009/12/14647_00-450x320.jpg",
+      "price": 200
+    },{
+      "name": "Badass Drinks at Beach",
+      "type": "Drinks",
+      "image": "https://www.savoredjourneys.com/wp-content/uploads/2015/08/best-beach-drinks-top.jpg",
+      "price": 150
+    }
+  ]
+}
