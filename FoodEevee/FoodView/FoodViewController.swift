@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  ImageJsonThing
+//  FoodEevee
 //
 //  Created by Yu-Sung Loyi Hsu on 2022/3/6.
 //
@@ -49,7 +49,7 @@ class FoodViewController: UIViewController {
     }
 
     func setupBinding() {
-        _ = viewModel.products
+        viewModel.products
             .subscribe(onNext: { receivedValue in
                 self.loadingView.isHidden = true
                 self.viewList = receivedValue.map {

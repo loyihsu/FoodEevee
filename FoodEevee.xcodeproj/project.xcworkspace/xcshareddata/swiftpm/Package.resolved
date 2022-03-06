@@ -29,12 +29,30 @@
         }
       },
       {
+        "package": "PromiseKit",
+        "repositoryURL": "https://github.com/mxcl/PromiseKit",
+        "state": {
+          "branch": null,
+          "revision": "3fd8c77ded8a4bbee548e3bd6c987ffe8c1e3574",
+          "version": "6.17.0"
+        }
+      },
+      {
         "package": "ReactiveSwift",
         "repositoryURL": "https://github.com/ReactiveCocoa/ReactiveSwift.git",
         "state": {
           "branch": null,
           "revision": "c43bae3dac73fdd3cb906bd5a1914686ca71ed3c",
           "version": "6.7.0"
+        }
+      },
+      {
+        "package": "RxSwift",
+        "repositoryURL": "https://github.com/ReactiveX/RxSwift",
+        "state": {
+          "branch": null,
+          "revision": "b4307ba0b6425c0ba4178e138799946c3da594f8",
+          "version": "6.5.0"
         }
       },
       {
