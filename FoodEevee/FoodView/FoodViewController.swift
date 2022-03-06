@@ -9,11 +9,12 @@ import UIKit
 import SnapKit
 import Kingfisher
 import Combine
+import RxSwift
 
 class FoodViewController: UIViewController {
     let viewModel = FoodViewModel()
 
-    var productBinding: AnyCancellable? = nil
+    let disposeBag = DisposeBag()
 
     let scrollView = UIScrollView()
 
@@ -48,18 +49,20 @@ class FoodViewController: UIViewController {
     }
 
     func setupBinding() {
-        productBinding = viewModel.$products.sink { receivedValue in
-            self.loadingView.isHidden = true
-            self.viewList = receivedValue.map {
-                let view = ItemCardView()
-                view.nameLabel.text = $0.name
-                view.priceLabel.text = "$\($0.price)"
-                let url = URL(string: $0.image)!
-                view.imageView.kf.setImage(with: url)
-                return view
-            }
-            self.updateStackView()
-        }
+        _ = viewModel.products
+            .subscribe(onNext: { receivedValue in
+                self.loadingView.isHidden = true
+                self.viewList = receivedValue.map {
+                    let view = ItemCardView()
+                    view.nameLabel.text = $0.name
+                    view.priceLabel.text = "$\($0.price)"
+                    let url = URL(string: $0.image)!
+                    view.imageView.kf.setImage(with: url)
+                    return view
+                }
+                self.updateStackView()
+            })
+            .disposed(by: disposeBag)
         scrollView.delegate = self
     }
 

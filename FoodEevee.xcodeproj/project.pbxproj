@@ -21,6 +21,7 @@
 		FF62DB9E27D45ECE00AB3B02 /* fetchJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF62DB9D27D45ECE00AB3B02 /* fetchJson.swift */; };
 		FF62DBA027D45FC800AB3B02 /* FoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF62DB9F27D45FC800AB3B02 /* FoodViewModel.swift */; };
 		FF62DBA327D4608400AB3B02 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF62DBA227D4608400AB3B02 /* ProductModel.swift */; };
+		FF7186CB27D47FA700EE4FAF /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FF7186CA27D47FA700EE4FAF /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 			files = (
 				FF62DB9427D44EEE00AB3B02 /* Kingfisher in Frameworks */,
 				FF073C6C27D44D2E009F2209 /* Moya in Frameworks */,
+				FF7186CB27D47FA700EE4FAF /* RxSwift in Frameworks */,
 				FF62DB9127D44E7C00AB3B02 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,6 +60,7 @@
 			children = (
 				FF073C5527D44CBE009F2209 /* FoodEevee */,
 				FF073C5427D44CBE009F2209 /* Products */,
+				FF7186C627D47BB500EE4FAF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +123,13 @@
 			path = FoodView;
 			sourceTree = "<group>";
 		};
+		FF7186C627D47BB500EE4FAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,6 +150,7 @@
 				FF073C6B27D44D2E009F2209 /* Moya */,
 				FF62DB9027D44E7C00AB3B02 /* SnapKit */,
 				FF62DB9327D44EEE00AB3B02 /* Kingfisher */,
+				FF7186CA27D47FA700EE4FAF /* RxSwift */,
 			);
 			productName = ImageJsonThing;
 			productReference = FF073C5327D44CBE009F2209 /* FoodEevee.app */;
@@ -173,6 +184,7 @@
 				FF073C6A27D44D2E009F2209 /* XCRemoteSwiftPackageReference "Moya" */,
 				FF62DB8F27D44E7C00AB3B02 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				FF62DB9227D44EEE00AB3B02 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				FF7186C927D47FA700EE4FAF /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = FF073C5427D44CBE009F2209 /* Products */;
 			projectDirPath = "";
@@ -444,6 +456,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		FF7186C927D47FA700EE4FAF /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -461,6 +481,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FF62DB9227D44EEE00AB3B02 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		FF7186CA27D47FA700EE4FAF /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF7186C927D47FA700EE4FAF /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
