@@ -52,15 +52,25 @@ class FoodViewController: UIViewController {
         viewModel.products
             .subscribe(onNext: { receivedValue in
                 self.loadingView.isHidden = true
-                self.viewList = receivedValue.map {
-                    let view = ItemCardView()
-                    view.nameLabel.text = $0.name
-                    view.priceLabel.text = "$\($0.price)"
-                    let url = URL(string: $0.image)!
-                    view.imageView.kf.setImage(with: url)
-                    return view
+                if let error = receivedValue.1 {
+                    let alertController = UIAlertController(
+                        title: "Something went wrong!",
+                        message: error.localizedDescription,
+                        preferredStyle: .alert
+                    )
+                    alertController.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
+                    self.present(alertController, animated: true)
+                } else {
+                    self.viewList = receivedValue.0.map {
+                        let view = ItemCardView()
+                        view.nameLabel.text = $0.name
+                        view.priceLabel.text = "$\($0.price)"
+                        let url = URL(string: $0.image)!
+                        view.imageView.kf.setImage(with: url)
+                        return view
+                    }
+                    self.updateStackView()
                 }
-                self.updateStackView()
             })
             .disposed(by: disposeBag)
         scrollView.delegate = self

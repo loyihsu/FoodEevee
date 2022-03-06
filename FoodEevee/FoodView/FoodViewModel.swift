@@ -11,10 +11,10 @@ import RxSwift
 import PromiseKit
 
 class FoodViewModel {
-    private let provider = MoyaProvider<FakeAPI>(stubClosure: MoyaProvider.delayedStub(3))
+    private let provider = MoyaProvider<FakeAPI>(stubClosure: MoyaProvider.immediatelyStub)
     private var isLoading = false
 
-    var products = PublishSubject<[ProductModel.Item]>()
+    var products = PublishSubject<([ProductModel.Item], Error?)>()
     var _products: [ProductModel.Item] = []
 
     func fetchData() {
@@ -27,9 +27,11 @@ class FoodViewModel {
             let result = try decoder.decode(ProductModel.self, from: response.data)
             self._products = self._products + result.items
 
-            self.products.onNext(self._products)
+            self.products.onNext((self._products, nil))
         }.ensure {
             self.isLoading = false
+        }.catch { error in
+            self.products.onNext(([], error))
         }
     }
 }
