@@ -13,7 +13,8 @@
 		FF073C6027D44CBE009F2209 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF073C5F27D44CBE009F2209 /* Assets.xcassets */; };
 		FF073C6327D44CBE009F2209 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF073C6127D44CBE009F2209 /* LaunchScreen.storyboard */; };
 		FF073C6C27D44D2E009F2209 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = FF073C6B27D44D2E009F2209 /* Moya */; };
-		FF5915F927D4849300C816E8 /* Moya + async await.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5915F827D4849300C816E8 /* Moya + async await.swift */; };
+		FF5915F927D4849300C816E8 /* Moya + PromiseKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5915F827D4849300C816E8 /* Moya + PromiseKit.swift */; };
+		FF5915FC27D4898D00C816E8 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = FF5915FB27D4898D00C816E8 /* PromiseKit */; };
 		FF62DB9127D44E7C00AB3B02 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FF62DB9027D44E7C00AB3B02 /* SnapKit */; };
 		FF62DB9427D44EEE00AB3B02 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FF62DB9327D44EEE00AB3B02 /* Kingfisher */; };
 		FF62DB9627D45DB800AB3B02 /* ItemCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF62DB9527D45DB800AB3B02 /* ItemCardView.swift */; };
@@ -33,7 +34,7 @@
 		FF073C5F27D44CBE009F2209 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF073C6227D44CBE009F2209 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF073C6427D44CBE009F2209 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FF5915F827D4849300C816E8 /* Moya + async await.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Moya + async await.swift"; sourceTree = "<group>"; };
+		FF5915F827D4849300C816E8 /* Moya + PromiseKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Moya + PromiseKit.swift"; sourceTree = "<group>"; };
 		FF62DB9527D45DB800AB3B02 /* ItemCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCardView.swift; sourceTree = "<group>"; };
 		FF62DB9827D45DF600AB3B02 /* FakeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeAPI.swift; sourceTree = "<group>"; };
 		FF62DB9B27D45E9200AB3B02 /* productResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = productResponse.json; sourceTree = "<group>"; };
@@ -47,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF5915FC27D4898D00C816E8 /* PromiseKit in Frameworks */,
 				FF62DB9427D44EEE00AB3B02 /* Kingfisher in Frameworks */,
 				FF073C6C27D44D2E009F2209 /* Moya in Frameworks */,
 				FF7186CB27D47FA700EE4FAF /* RxSwift in Frameworks */,
@@ -95,7 +97,7 @@
 				FF62DBA127D4607A00AB3B02 /* Model */,
 				FF62DB9A27D45E7A00AB3B02 /* SampleData */,
 				FF62DB9827D45DF600AB3B02 /* FakeAPI.swift */,
-				FF5915F827D4849300C816E8 /* Moya + async await.swift */,
+				FF5915F827D4849300C816E8 /* Moya + PromiseKit.swift */,
 			);
 			path = WebAPI;
 			sourceTree = "<group>";
@@ -154,6 +156,7 @@
 				FF62DB9027D44E7C00AB3B02 /* SnapKit */,
 				FF62DB9327D44EEE00AB3B02 /* Kingfisher */,
 				FF7186CA27D47FA700EE4FAF /* RxSwift */,
+				FF5915FB27D4898D00C816E8 /* PromiseKit */,
 			);
 			productName = ImageJsonThing;
 			productReference = FF073C5327D44CBE009F2209 /* FoodEevee.app */;
@@ -188,6 +191,7 @@
 				FF62DB8F27D44E7C00AB3B02 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				FF62DB9227D44EEE00AB3B02 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				FF7186C927D47FA700EE4FAF /* XCRemoteSwiftPackageReference "RxSwift" */,
+				FF5915FA27D4898D00C816E8 /* XCRemoteSwiftPackageReference "PromiseKit" */,
 			);
 			productRefGroup = FF073C5427D44CBE009F2209 /* Products */;
 			projectDirPath = "";
@@ -216,7 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF5915F927D4849300C816E8 /* Moya + async await.swift in Sources */,
+				FF5915F927D4849300C816E8 /* Moya + PromiseKit.swift in Sources */,
 				FF073C5B27D44CBE009F2209 /* FoodViewController.swift in Sources */,
 				FF62DB9627D45DB800AB3B02 /* ItemCardView.swift in Sources */,
 				FF62DB9927D45DF600AB3B02 /* FakeAPI.swift in Sources */,
@@ -444,6 +448,14 @@
 				minimumVersion = 15.0.0;
 			};
 		};
+		FF5915FA27D4898D00C816E8 /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mxcl/PromiseKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 		FF62DB8F27D44E7C00AB3B02 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -475,6 +487,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FF073C6A27D44D2E009F2209 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		FF5915FB27D4898D00C816E8 /* PromiseKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF5915FA27D4898D00C816E8 /* XCRemoteSwiftPackageReference "PromiseKit" */;
+			productName = PromiseKit;
 		};
 		FF62DB9027D44E7C00AB3B02 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

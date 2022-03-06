@@ -6,16 +6,17 @@
 //
 
 import Moya
+import PromiseKit
 
 extension MoyaProvider {
-    func request(_ target: Target) async throws -> Response {
-        return try await withUnsafeThrowingContinuation { continuation in
+    func request(_ target: Target) -> Promise<Response> {
+        return Promise<Response> { resolver in
             self.request(target) { response in
                 switch response {
                 case .success(let response):
-                    continuation.resume(returning: response)
+                    resolver.fulfill(response)
                 case .failure(let error):
-                    continuation.resume(throwing: error)
+                    resolver.reject(error)
                 }
             }
         }

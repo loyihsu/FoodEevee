@@ -6,10 +6,10 @@
 //
 
 import Foundation
-import class Moya.MoyaProvider
+import Moya
 import RxSwift
+import PromiseKit
 
-@MainActor
 class FoodViewModel {
     private let provider = MoyaProvider<FakeAPI>(stubClosure: MoyaProvider.delayedStub(3))
     private var isLoading = false
@@ -19,26 +19,17 @@ class FoodViewModel {
 
     func fetchData() {
         guard !isLoading else { return }
-        Task {
-            do {
-                try await loadingIndicated {
-                    let response = try await provider.request(.product)
-
-                    let decoder = JSONDecoder()
-                    let result = try decoder.decode(ProductModel.self, from: response.data)
-                    _products = _products + result.items
-
-                    products.onNext(_products)
-                }
-            } catch {
-                print(error)
-            }
-        }
-    }
-
-    func loadingIndicated(closure: () async throws -> Void) async throws {
         isLoading = true
-        try await closure()
-        isLoading = false
+        _ = firstly {
+            provider.request(.product)
+        }.done { response in
+            let decoder = JSONDecoder()
+            let result = try decoder.decode(ProductModel.self, from: response.data)
+            self._products = self._products + result.items
+
+            self.products.onNext(self._products)
+        }.ensure {
+            self.isLoading = false
+        }
     }
 }
